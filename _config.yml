@@ -1,13 +1,12 @@
 # Site settings
-title: SCENEE Tech Blog
+title: Scenee Tech Blog
 email: shin2smile@gmail.com
 description: | #> # this means to ignore newlines until "baseurl:"
-  Welcom! I'm SCENEE[/siːni/]. Software Development Engineer.
-  My Goal is to create incredible products in short life.
-  I like Unix philosophy. so I like Unix, Linux and C.
-  Also I like iOS, ObjC and Swift.
-  Recently I have been intersted in wireless technologies
-  and functional programming using Erlang.
+  Welcom! I'm Scenee[/siːni/]. Software Development Engineer.
+  My goal is to create incredible products in my short life.
+  I love Unix philosophy, Linux and C. Also iOS, ObjC and Swift.
+  Recently I have been intersted in wireless technologies(i.e. BLE)
+  and functional programming(i.e. Swift, Erlang)
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: SCENEE
