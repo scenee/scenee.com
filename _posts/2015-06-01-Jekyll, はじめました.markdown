@@ -1,0 +1,14 @@
+---
+layout: post
+title:  "Jekyll, はじめました。"
+date:   2015-06-02 09:00:00
+categories: jekyll update
+---
+
+[Jekyll][jekyll]をはじめました。
+とにかく、シンプルにメンテナスしやすく
+そして、率直に文章で伝わるブログを書きたいと思い、[Jekyll][jekyll]を使うことにしました。
+
+これからよろしくお願いします。
+
+[jekyll]:      http://jekyllrb.com
