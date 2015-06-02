@@ -6,9 +6,15 @@ categories: jekyll update
 ---
 
 [Jekyll][jekyll]をはじめました。
-とにかく、シンプルにメンテナスしやすく
-そして、率直に文章で伝わるブログを書きたいと思い、[Jekyll][jekyll]を使うことにしました。
+とにかく、シンプルにメンテナスしやすく、
+そして、率直に文章で伝わるブログを書きたいと思い、
+[Jekyll][jekyll]を使うことにしました。
 
-これからよろしくお願いします。
+
+I have started my blog with [Jekyll][jekyll].
+I'd like to write articles to tell my thoughts straightforwardly.
+And I make it easy and simple to maintain my blog. 
+
+So I chose [Jekyll][jekyll].
 
 [jekyll]:      http://jekyllrb.com
