@@ -1,0 +1,30 @@
+---
+layout: post
+status: publish
+published: true
+title: Vimでヤンクした内容をクリップボードにレジストできるようにする。
+author:
+  display_name: scenee
+  login: scenee
+  email: shin2smile@gmail.com
+  url: ''
+author_login: scenee
+author_email: shin2smile@gmail.com
+wordpress_id: 82
+wordpress_url: http://blog.scenee.com/?p=82
+date: '2012-01-20 19:10:24 +0900'
+date_gmt: '2012-01-20 10:10:24 +0900'
+categories:
+- 未分類
+tags: []
+comments: []
+---
+<p>以下でバージョンと、オプションを確認する。<br />
+<code>vim --version | grep clipboard<&#47;code></p>
+<p>もし、"-clipboard"だった場合、以下の実行して、リビルドする。<br />
+<code>sudo port install vim +clipboard<&#47;code></p>
+<p><code><&#47;code>そして、.vimrcに以下のラインを加えて、bashに再度ログインする。<br />
+<code>set clipboard=unnamed<&#47;code></p>
+<p>最後に、再度、以下でバージョンと、オプションを確認する。</p>
+<p><code>vim --version | grep clipboard<&#47;code></p>
+<div>もし、このとき、バージョンとオプションが変わっていない場合、プレインストールのvimを起動していますので、PATHを適時変更します。<&#47;div></p>

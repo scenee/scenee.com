@@ -1,0 +1,31 @@
+---
+layout: post
+status: publish
+published: true
+title: "[Ruby] protocol.rbより`Errno::EAGAIN' エラーが発生する"
+author:
+  display_name: scenee
+  login: scenee
+  email: shin2smile@gmail.com
+  url: ''
+author_login: scenee
+author_email: shin2smile@gmail.com
+wordpress_id: 217
+wordpress_url: http://blog.scenee.com/?p=217
+date: '2012-02-24 10:55:24 +0900'
+date_gmt: '2012-02-24 01:55:24 +0900'
+categories:
+- 未分類
+tags: []
+comments: []
+---
+<h1>問題<&#47;h1><br />
+RubyでHTTP通信を行うプログラムを実行した際に、以下のようなエラーが表示される。</p>
+<pre>Exception `Errno::EAGAIN' at (省略) ruby-1.9.3-p0&#47;lib&#47;ruby&#47;1.9.1&#47;net&#47;protocol.rb:141 - Resource temporarily unavailable - read would block<&#47;pre></p>
+<h1>解決方法<&#47;h1><br />
+これは、$DEBUGというグローバル変数をそのプログラムでtrueに設定しているため、エラーが出力されます。そのため、$DEBUG=falseとすれば、表示されません。</p>
+<p>また、$DEBUGは、ruby -dで、trueとなります。</p>
+<h1>後記<&#47;h1><br />
+Rubyの勉強不足ですね。。。ただ、$DEBUGを使ってしまったからとはいえ、protocol.rbからなぜ、そのようなエラーが発生ているのか気になります。時間のあるときに、調査できればと思いますが、もしご存知でしたら、コメントで教えていただけると嬉しいです。</p>
+<h1>参照<&#47;h1></p>
+<h1><a href="http:&#47;&#47;stackoverflow.com&#47;questions&#47;4181099&#47;strange-ruby-error-with-nethttp-get">Strange Ruby error with Net::HTTP.get<&#47;a><&#47;h1></p>

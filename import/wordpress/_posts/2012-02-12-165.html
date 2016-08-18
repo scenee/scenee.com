@@ -1,0 +1,29 @@
+---
+layout: post
+status: publish
+published: true
+title: XCode4.2でビルドしたときに、発生する警告"no rule to process file ... of type sourcecode.c.h"を解決する。
+author:
+  display_name: scenee
+  login: scenee
+  email: shin2smile@gmail.com
+  url: ''
+author_login: scenee
+author_email: shin2smile@gmail.com
+wordpress_id: 165
+wordpress_url: http://blog.scenee.com/?p=165
+date: '2012-02-12 21:22:49 +0900'
+date_gmt: '2012-02-12 12:22:49 +0900'
+categories:
+- 未分類
+tags: []
+comments: []
+---
+<p><strong>問題<&#47;strong></p>
+<p>Xcode4.2でビルドをしたときに以下のような警告が出た。</p>
+<pre>[WARN]warning: no rule to process file '$(PROJECT_DIR)&#47;######' of type sourcecode.c.h<&#47;pre><br />
+<strong>解決方法<&#47;strong></p>
+<p>これは、ビルドしたターゲットの Build Phases に.hファイルが含まれているからでした。.hファイルを削除したら、警告は出なくなりました。</p>
+<p><strong>参照<&#47;strong></p>
+<p>Stackoverflowの以下のエントリーを参照しました。</p>
+<p><a href="http:&#47;&#47;stackoverflow.com&#47;questions&#47;7604885&#47;build-rules-for-xcode-iphone ">http:&#47;&#47;stackoverflow.com&#47;questions&#47;7604885&#47;build-rules-for-xcode-iphone&nbsp;<&#47;a></p>

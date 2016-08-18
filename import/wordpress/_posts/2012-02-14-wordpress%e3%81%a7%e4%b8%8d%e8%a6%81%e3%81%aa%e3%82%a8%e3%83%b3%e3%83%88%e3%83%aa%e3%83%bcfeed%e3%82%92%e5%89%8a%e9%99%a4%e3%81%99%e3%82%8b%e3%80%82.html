@@ -1,0 +1,36 @@
+---
+layout: post
+status: publish
+published: true
+title: WordpressでRSSフィードから不要なエントリーのリンクを削除する。
+author:
+  display_name: scenee
+  login: scenee
+  email: shin2smile@gmail.com
+  url: ''
+author_login: scenee
+author_email: shin2smile@gmail.com
+wordpress_id: 184
+wordpress_url: http://blog.scenee.com/?p=184
+date: '2012-02-14 15:00:51 +0900'
+date_gmt: '2012-02-14 06:00:51 +0900'
+categories:
+- 未分類
+tags: []
+comments: []
+---
+<h1>問題<&#47;h1><br />
+以前作成したエントリーで、現在削除されているエントリーが、RSSフィードに残って、表示されてしまいます。どうすれば、これを削除できるのでしょうか？</p>
+<h1>解決方法<&#47;h1><br />
+Wordpressでは、RSSフィードの情報は、wp-includes&#47;rss.phpによって、動的に生成されています。そして、エントリーに関する情報は、全てDB内のwp_postsというテーブルに保存されています（削除済みのエントリーもそのテーブルに残るのかもしれません)。そのため、wordpressが利用しているDBから、以下の手順で、それらのエントリーデータを削除しました。</p>
+<p>まず、以下のコマンドで、mysqlコンソールに入ります。</p>
+<pre>$mysql -h HOST -P PORT -u USER -D DATABASE -p<&#47;pre><br />
+続いて、以下のSQLコマンドで、該当のエントリーがあるかどうか確認します。このとき、RSSフィードに表示されているタイトルから探しました。</p>
+<pre>mysql> select * from wp_posts where post_title="TITLE"<&#47;pre></p>
+<div>&nbsp;そして、該当のフィードがあることが確認できたら、それを削除します。<&#47;div></p>
+<pre>mysql> delete from wp_posts where post_title="TITLE"<&#47;pre><br />
+これで、無事、RSSフィードから不要な情報を削除できました。</p>
+<p>ただ、少々強引な方法のように感じます。もし良い方法があったら是非、教えてくださいね: )</p>
+<h1>参照<&#47;h1><br />
+<a href="http:&#47;&#47;wordpress.org&#47;support&#47;topic&#47;where-is-rss-address-in-database">http:&#47;&#47;wordpress.org&#47;support&#47;topic&#47;where-is-rss-address-in-database<&#47;a></p>
+<p><a href="http:&#47;&#47;ja.forums.wordpress.org&#47;topic&#47;4146">http:&#47;&#47;ja.forums.wordpress.org&#47;topic&#47;4146<&#47;a></p>

@@ -1,0 +1,27 @@
+---
+layout: post
+status: publish
+published: true
+title: MacでSHA-1 Checksumを取る方法
+author:
+  display_name: scenee
+  login: scenee
+  email: shin2smile@gmail.com
+  url: ''
+author_login: scenee
+author_email: shin2smile@gmail.com
+wordpress_id: 85
+wordpress_url: http://blog.scenee.com/?p=85
+date: '2012-01-24 10:52:10 +0900'
+date_gmt: '2012-01-24 01:52:10 +0900'
+categories:
+- 未分類
+tags: []
+comments: []
+---
+<p>Macのターミナルで、以下のコマンドを実行します。Mac OS Xは、Snow Leopardです。</p>
+<pre><code>shasum file<&#47;code><&#47;pre><br />
+同時にパイプで、<code>grep CHECKSUM_CHARS<&#47;code>を実行するとよさそうです。</p>
+<p>デフォルトアルゴリズムは、SHA-1となっています。-a オプションで、SHA-256などが選択できます。<br />
+詳しくは、以下のコマンドを実行してヘルプを参照してください。</p>
+<pre><code>shasum-h<&#47;code><&#47;pre></p>

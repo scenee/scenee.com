@@ -1,0 +1,40 @@
+---
+layout: post
+status: publish
+published: true
+title: IIS7.0における、UTF-8エンコードファイルの文字化け解消方法
+author:
+  display_name: scenee
+  login: scenee
+  email: shin2smile@gmail.com
+  url: ''
+author_login: scenee
+author_email: shin2smile@gmail.com
+wordpress_id: 34
+wordpress_url: http://blog.scenee.com/?p=34
+date: '2012-01-12 10:28:53 +0900'
+date_gmt: '2012-01-12 01:28:53 +0900'
+categories:
+- IIS
+- Character Encoding
+tags: []
+comments: []
+---
+<h1>問題<&#47;h1><br />
+IIS7.0において、UTF-8エンコードの日本語文字列を扱うスクリプトファイルを使用するとき、そのスクリプトファイルの処理結果で、表示されるべき日本語が文字化けしてしまう。</p>
+<h1>解決方法<&#47;h1></p>
+<ol>
+<li>ファイルのUTF-8エンコードがBOM付いているかを確認する。<&#47;li>
+<li>付いていない場合は、BOM付きUTF-8でファイルを保存し直す。<&#47;li><br />
+<&#47;ol></p>
+<h1>どうやって、UTF-8エンコードにBOMが付いているか確認するのか？<&#47;h1></p>
+<h2>Vimの場合<&#47;h2><br />
+以下のコマンドを打ちます。返答が、"bomb"では、BOM付きで、"nobomb"では、BOM無しです。</p>
+<pre>:set bomb?<&#47;pre></p>
+<h1>どうやって、BOMを付ける&#47;外すのか？<&#47;h1></p>
+<h2>Vimの場合<&#47;h2><br />
+BOMを付けるときは、以下のコマンドを打ちます。</p>
+<pre>:set bomb<&#47;pre><br />
+BOMを外すときは、以下のコマンドを打ちます。</p>
+<pre>:set nobomb<&#47;pre><br />
+&nbsp;</p>

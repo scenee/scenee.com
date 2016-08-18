@@ -1,0 +1,49 @@
+---
+layout: post
+status: publish
+published: true
+title: Javascriptで小数を含む計算を行うとき、計算結果の小数点2位以下を丸める。
+author:
+  display_name: scenee
+  login: scenee
+  email: shin2smile@gmail.com
+  url: ''
+author_login: scenee
+author_email: shin2smile@gmail.com
+wordpress_id: 156
+wordpress_url: http://blog.scenee.com/?p=156
+date: '2012-02-07 18:36:43 +0900'
+date_gmt: '2012-02-07 09:36:43 +0900'
+categories:
+- 未分類
+tags: []
+comments: []
+---
+<p>下記のように、摂氏から華氏に変換する演算をJavascriptで行う際</p>
+<pre>((c * 9.0) &#47; 5.0) * 10 + 32.0<&#47;pre><br />
+たとえば、</p>
+<pre>c = -17<&#47;pre><br />
+だと、計算結果が、</p>
+<pre>1.3999999999999986<&#47;pre><br />
+になってしまい、実際に表示する値としてはふさわくしない形となってしまいます。</p>
+<p>なぜ、このようになるのかは、Javascriptの浮動小数点の扱いによるようです。以下のエントリーが参考になりました。</p>
+<p>c.f. 『JavaScript、お前もか（小数点を含む計算について）』<a href="http:&#47;&#47;detaramedia.blog95.fc2.com&#47;blog-entry-81.html">http:&#47;&#47;detaramedia.blog95.fc2.com&#47;blog-entry-81.html<&#47;a></p>
+<p>このような結果を避けるために、toFixedメソッドを使えばいいか！と考えましたが、<br />
+c.f.&nbsp;<a href="http:&#47;&#47;www.ajaxtower.jp&#47;js&#47;number_class&#47;index5.html">http:&#47;&#47;www.ajaxtower.jp&#47;js&#47;number_class&#47;index5.html<&#47;a></p>
+<p>これだけだと、整数にも小数点以下が表示されてしまいます。</p>
+<pre>1.toFixed(1) => 1.0<&#47;pre><br />
+よって、算出結果が小数かどうか判定して、小数の場合、toFixedを当てることにしました。</p>
+<pre>var rt = ((c * 9.0) &#47; 5.0) * 10 + 32.0 ;<br />
+if( f.match(&#47;^-?[0-9]+\.[0-9]+$&#47;) ){<br />
+    return rt.toFixed(1);<br />
+}<br />
+else{<br />
+    return rt;<br />
+}<&#47;pre><br />
+しかし、以下のエントリーにもっといい方法がありました。</p>
+<p>[メモ] 以下のエントリーも大変参考になりました。</p>
+<p>Javascriptで小数点以下X桁を四捨五入する<br />
+<a title="Javascriptで小数点以下X桁を四捨五入する" href="http:&#47;&#47;blog.mudaimemo.com&#47;2008&#47;10&#47;javascriptx.html">http:&#47;&#47;blog.mudaimemo.com&#47;2008&#47;10&#47;javascriptx.html<&#47;a></p>
+<p>よって、小数点2位以下を丸める場合、以下が良いのではないかと思います。</p>
+<pre>var rt = ((c * 9.0) &#47; 5.0) * 10 + 32.0 ;<br />
+return Math.round(rt * 100) &#47; 100;<&#47;pre></p>

@@ -1,0 +1,30 @@
+---
+layout: post
+status: publish
+published: true
+title: JavascriptでブラウザのCookieが有効かどうか判定する。
+author:
+  display_name: scenee
+  login: scenee
+  email: shin2smile@gmail.com
+  url: ''
+author_login: scenee
+author_email: shin2smile@gmail.com
+wordpress_id: 150
+wordpress_url: http://blog.scenee.com/?p=150
+date: '2012-02-07 17:21:56 +0900'
+date_gmt: '2012-02-07 08:21:56 +0900'
+categories:
+- 未分類
+tags: []
+comments: []
+---
+<p>以下の場合は、Cookieが有効です。</p>
+<pre><code>navigator.cookieEnabled === true<&#47;code><&#47;pre><br />
+なお、Javasriptが有効でない場合に対応するためには、<br />
+<noscript>タグがあります。</p>
+<p>例えば、以下のように使います。</p>
+<pre>
+<noscript>
+<p>このページではJavaScriptを使用しています。<&#47;p><br />
+<&#47;noscript><&#47;pre></p>

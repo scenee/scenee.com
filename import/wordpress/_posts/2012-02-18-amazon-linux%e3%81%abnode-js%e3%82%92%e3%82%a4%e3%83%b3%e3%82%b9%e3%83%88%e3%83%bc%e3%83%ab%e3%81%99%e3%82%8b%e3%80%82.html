@@ -1,0 +1,58 @@
+---
+layout: post
+status: publish
+published: true
+title: Amazon LinuxにNode.jsをインストールする。
+author:
+  display_name: scenee
+  login: scenee
+  email: shin2smile@gmail.com
+  url: ''
+author_login: scenee
+author_email: shin2smile@gmail.com
+wordpress_id: 200
+wordpress_url: http://blog.scenee.com/?p=200
+date: '2012-02-18 00:02:16 +0900'
+date_gmt: '2012-02-17 15:02:16 +0900'
+categories:
+- 未分類
+tags: []
+comments: []
+---
+<p>Twitter Streaming APIをブラウザ上で利用するために、Node.js+socket.ioを利用することにしました。そこで、Node.jsをAmazonEC2にインストールしました。以下、その際のメモです。</p>
+<p>Node.js:&nbsp;<a href="http:&#47;&#47;nodejs.org&#47;">http:&#47;&#47;nodejs.org&#47;<&#47;a></p>
+<p><strong>1. yum から必要なモジュールをインストール<&#47;strong></p>
+<ol>
+<li>git<&#47;li>
+<li>wget<&#47;li>
+<li>gcc-c++<&#47;li>
+<li>openssl-devel<&#47;li><br />
+<&#47;ol></p>
+<div>
+<pre>$ sudo yum install wget git gcc-c++ openssl-devel<&#47;pre></p>
+<address>なお、gcc-c++をインストールしていないと以下のような警告が出ました。<&#47;address></p>
+<pre>Checking for program g++ or c++          : not found<br />
+Checking for program icpc                : not found<br />
+Checking for program c++                 : not found<br />
+&#47;home&#47;ec2-user&#47;.nvm&#47;src&#47;node-v0.4.11&#47;wscript:232: error: could not configure a cxx compiler!<&#47;pre><br />
+また、openssl-develをインストールしていないと以下のような警告が出ました。</p>
+<pre>Checking for openssl : not found<br />
+Checking for function SSL_library_init : not found<br />
+Checking for header openssl&#47;crypto.h : not found<br />
+&#47;home&#47;ec2-user&#47;.nvm&#47;src&#47;node-v0.4.11&#47;wscript:341: error: Could not autodetect OpenSSL support. Make sure OpenSSL development packages are installed. Use configure --without-ssl to disable this message.<&#47;pre><br />
+<&#47;div><br />
+<strong>2. nvmのソースコードをcheckout<&#47;strong></p>
+<p>nvm (node version manager) のソースコードをgithubからダウンロード。実態はシェルスクリプトです。</p>
+<pre>$ git clone git:&#47;&#47;github.com&#47;creationix&#47;nvm.git ~&#47;.nvm<&#47;pre><br />
+<strong>3. nvmを使う<&#47;strong></p>
+<div>
+<pre>$ source ~&#47;.nvm&#47;nvm.sh<&#47;pre><br />
+<&#47;div><br />
+nvmを使うたびにこの .sh を読み込まなければいけないので、忘れないうちに、上記のコマンドを .bashrc に追加します。</p>
+<p><strong>4. install node and use<&#47;strong></p>
+<div>
+<pre>$ nvm install v0.4.11<br />
+$ nvm use v0.4.11<br />
+$ node --version<br />
+v0.4.11<&#47;pre><br />
+<&#47;div></p>

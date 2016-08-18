@@ -1,0 +1,31 @@
+---
+layout: post
+status: publish
+published: true
+title: bash環境設定ファイルの読み込み順
+author:
+  display_name: scenee
+  login: scenee
+  email: shin2smile@gmail.com
+  url: ''
+author_login: scenee
+author_email: shin2smile@gmail.com
+wordpress_id: 77
+wordpress_url: http://blog.scenee.com/?p=77
+date: '2012-01-20 19:06:05 +0900'
+date_gmt: '2012-01-20 10:06:05 +0900'
+categories:
+- 未分類
+tags: []
+comments: []
+---
+<div>Linux&#47;Unixにおいてbashの環境設定ファイルは以下の順に読み込まれるようです。<&#47;div></p>
+<ol>
+<li>まず、「&#47;etc&#47;profile」を読み込む<&#47;li>
+<li>次に、「~&#47;.bash_profile」が存在すれば読み込む<&#47;li>
+<li>「~&#47;.bash_profile」が存在せず、「~&#47;.bash_login」があれば、「~&#47;.bash_login」を読み込む<&#47;li>
+<li>「~&#47;.bash_profile」も「~&#47;.bash_login」も存在せず、「~&#47;.profile」が存在すれば、「~&#47;.profile」を読み込む<&#47;li><br />
+<&#47;ol><br />
+なお、Mac OS では、$PATHの設定が、&#47;etc&#47;pathsで設定できるよう。これは、&#47;usr&#47;libexec&#47;path_helperで管理しているようです。</p>
+<p>参照：最近のMac OSXで、PATHをスマート(?)に管理するやり方。<br />
+<a title="最近のMac OSXで、PATHをスマート(?)に管理するやり方。" href="http:&#47;&#47;d.hatena.ne.jp&#47;koseki2&#47;20081201&#47;macportPath"> http:&#47;&#47;d.hatena.ne.jp&#47;koseki2&#47;20081201&#47;macportPath<&#47;a></p>
