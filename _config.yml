@@ -10,7 +10,7 @@ port: 3000
 safe: true
 
 # Site settings
-title: Scenee Tech Blog
+title: SCENEE
 author: Shin Yamamoto
 email: contact@scenee.com
 avatar: profile.jpg
