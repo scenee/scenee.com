@@ -28,6 +28,7 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 twitter: scenee
 github:  scenee
 stackoverflow: users/5097257/scenee
+google_analytics: UA-80987308-2
 
 # Build settings
 markdown: kramdown
