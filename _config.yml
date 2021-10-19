@@ -10,13 +10,13 @@ port: 3000
 safe: true
 
 # Site settings
-title: SCENEE
-author: SCENEE
+title: scenee
+author: scenee
 email: contact@scenee.com
 avatar: profile.jpg
 
 description: | #> # this means to ignore newlines until "baseurl:"
-  Welcom! I'm Scenee[/siːni/]. Software Development Engineer.
+  Welcom! I'm scenee[/siːni/]. Software Development Engineer.
   My goal is to create incredible products in my short life.
   I love Unix philosophy, Linux and C. Also iOS, ObjC and Swift.
   Recently I have been intersted in wireless technologies(i.e. BLE)
